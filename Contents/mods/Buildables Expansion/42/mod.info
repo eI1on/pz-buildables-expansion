@@ -1,0 +1,10 @@
+id=Buildables Expansion
+name=Buildables Expansion
+description=
+poster=poster.png
+author=Elyon
+modversion=0.0.1
+tags=Build 42
+versionMin=42.0
+tiledef=building_menu 400
+pack=building_menu

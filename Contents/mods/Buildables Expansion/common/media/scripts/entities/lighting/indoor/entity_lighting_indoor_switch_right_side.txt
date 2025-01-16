@@ -1,0 +1,74 @@
+module Base
+{
+	xuiSkin default
+	{
+		entity ES_LightSwitchRightSide
+		{
+			LuaWindowClass	= ISEntityWindow,
+			DisplayName	= Light Switch Right Side,
+			Icon		= building_menu_lighting_24,
+		}
+	}
+
+    entity LightSwitchRightSide
+    {
+        component UiConfig
+        {
+            xuiSkin         = default,
+            entityStyle     = ES_LightSwitchRightSide,
+            uiEnabled       = false,
+        }
+
+        component SpriteConfig
+        {
+            face N
+            {
+                layer
+                {
+                    row = building_menu_lighting_27,
+                }
+            }
+            face E
+            {
+                layer
+                {
+                    row = building_menu_lighting_29,
+                }
+            }
+            face S
+            {
+                layer
+                {
+                    row = building_menu_lighting_24,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = building_menu_lighting_31,
+                }
+            }
+        }
+        
+        component CraftRecipe
+        {
+            OnAddToMenu   = genericOnAddToMenu,
+            timedAction   = BuildWallMetal,
+            time          = 200,
+            needToBeLearn = true,
+            category      = Lighting,
+            SkillRequired = Electricity:4,
+            xpAward       = Electricity:15,
+            ToolTip       = Tooltip_craft_lightSwitchDesc,
+            inputs
+            {
+                item 1 tags[Screwdriver] mode:keep flags[Prop1],
+                item 10 [Base.ElectronicsScrap],
+		        item 15 [Base.ElectricWire],
+		        item 1 [Base.LightBulb],
+		        item 1 [Base.PlasticSheetSmall],
+            }
+        }
+    }
+}

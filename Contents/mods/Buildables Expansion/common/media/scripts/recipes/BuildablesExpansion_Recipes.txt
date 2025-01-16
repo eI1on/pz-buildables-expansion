@@ -1,0 +1,21 @@
+module Base
+{
+	craftRecipe MakeBucketAsphaltMixture
+	{
+        timedAction = MixingBucket,
+		Time = 150,
+		Tags = InHandCraft;Carpentry,
+        category = Carpentry,
+		inputs
+		{
+			item 1 [Base.Bucket;Base.BucketWaterDebug],
+            		-fluid 10.0 [Water;TaintedWater],
+			item 1 [Base.AsphaltMixturePowder],
+		}
+		outputs
+		{
+			item 1 Base.BucketAsphaltMixtureFull,
+		}
+	}
+
+}
