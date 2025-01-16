@@ -131,16 +131,16 @@ local function tweakItems()
         },
         ["Base.OldHouseJournal_WoodenFloors"] = {
             -- Wooden Floors
-            "WoodFloorWidePlank", "WoodFloorCinnamonWood", "WoodFloorPineWood",
-            "WoodFloorFinewood", "WoodFloorOakwood", "WoodFloorChestnutWood",
+            "WoodFloorWidePlank", "WoodFloorCinnamon", "WoodFloorPinewood",
+            "WoodFloorFinewood", "WoodFloorOakwood", "WoodFloorChestnut",
             "WoodFloorHardwood", "WoodFloorBirchwood"
         },
         ["Base.ArchitecturalDigest_RugsCarpets"] = {
             -- Carpets
-            "FloorGrayCarpet", "FloorYellowCarpet", "FloorBlueCarpet", "FloorDarkRedCarpet",
-            "FloorDarkGrayCarpet", "FloorLightGreenCarpet", "FloorBrownCarpet", "FloorRedCarpet",
+            "FloorGreyCarpet", "FloorYellowCarpet", "FloorBlueCarpet", "FloorDarkRedCarpet",
+            "FloorDarkGreyCarpet", "FloorLightGreenCarpet", "FloorBrownCarpet", "FloorRedCarpet",
             "FloorGreenCarpet", "FloorBeigeCarpet", "FloorPurpleCarpet", "FloorWhiteCarpet",
-            "FloorGreenesGroceryCarpet", "FloorBlackCarpet", "FloorBordeauxCarpet", "FloorGrayCurlyCarpet",
+            "FloorGreenesGroceryCarpet", "FloorBlackCarpet", "FloorBordeauxCarpet", "FloorGreyCurlyCarpet",
             "FloorVioletCarpet",
             -- Rugs
             "FancyOrangeRugCorner", "BordeauxSideRug", "BathroomBrownRug",
@@ -191,7 +191,7 @@ local function tweakItems()
             "WhiteMicrowave", "GreenOven", "JorgeForeguyBarbecue", "GreyOven", "ChromeMicrowave", "Barbecue",
             "IndustrialOven", "FryersClubIndustrial", "RedOven", "AntiqueOven", "ModernOven",
             -- Fridges
-            "MiniFridge", "RedFridge", "TrailerFridge1", "TrailerFridge2", "PlainFridge", "WhiteFridge",
+            "MiniFridge", "RedFridge", "TrailerFridgeA", "TrailerFridgeB", "PlainFridge", "WhiteFridge",
             "GreenFridge", "PopsicleFridge", "BlueFridge", "WhiteIndustrialFridge", "IndustrialFridge",
             "SteelFridge", "GenericCooledShelves", "LargeFridge",
             -- Washing machines
@@ -200,12 +200,12 @@ local function tweakItems()
         ["Base.FlooringGuide_Ceramic"] = {
             -- Ceramic Tile Floors
             "CeramicFloorBlackTiles", "CeramicFloorWhiteDiagonalTiles", "CeramicFloorYellowCheckeredTiles",
-            "CeramicFloorGrayTiles", "CeramicFloorBrownCheckeredTiles", "CeramicFloorBrownTiles",
-            "CeramicFloorGrayDiagonalTiles", "CeramicFloorDarkGrayTiles", "CeramicFloorBlueCheckeredTiles",
-            "CeramicFloorDarkGraySquaresTiles", "CeramicFloorGreenTiles", "CeramicFloorCinnamonTiles",
+            "CeramicFloorGreyTiles", "CeramicFloorBrownCheckeredTiles", "CeramicFloorBrownTiles",
+            "CeramicFloorGreyDiagonalTiles", "CeramicFloorDarkGreyTiles", "CeramicFloorBlueCheckeredTiles",
+            "CeramicFloorDarkGreySquaresTiles", "CeramicFloorGreenTiles", "CeramicFloorCinnamonTiles",
             "CeramicFloorBeigeCheckeredTiles", "CeramicFloorBlackDiagonalTiles", "CeramicFloorPurpleTiles",
-            "CeramicFloorGreenDiagonalTiles", "CeramicFloorGrayCheckeredTiles", "CeramicFloorWhiteCheckeredTiles",
-            "CeramicFloorGraySquaresTiles", "CeramicFloorHardwoodTiles", "CeramicFloorBirchwoodTiles",
+            "CeramicFloorGreenDiagonalTiles", "CeramicFloorGreyCheckeredTiles", "CeramicFloorWhiteCheckeredTiles",
+            "CeramicFloorGreySquaresTiles", "CeramicFloorHardwoodTiles", "CeramicFloorBirchwoodTiles",
             "CeramicFloorBrownDiagonalTiles", "CeramicFloorYellowDiagonalTiles", "CeramicFloorAcaciaTiles"
         },
         ["Base.FlooringGuide_Paved"] = {
@@ -217,7 +217,7 @@ local function tweakItems()
             -- Concrete Floors
             "ConcreteFloor", "ConcreteCornerFloor",
             -- Smooth Floors
-            "GraySmoothTilesFloor", "WhiteSmoothTilesFloor", "BeigeSmoothTilesFloor", "DarkGraySmoothTilesFloor"
+            "GreySmoothTilesFloor", "WhiteSmoothTilesFloor", "BeigeSmoothTilesFloor", "DarkGreySmoothTilesFloor"
         },
         ["Base.DecorationsGuide_RoadwayGarage"] = {
             -- Concrete

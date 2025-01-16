@@ -2,7 +2,7 @@ module Base
 {
 	xuiSkin default
 	{
-		entity ES_CeramicFloorDarkGrayTiles
+		entity ES_CeramicFloorDarkGreyTiles
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Ceramic Floor Dark Grey Tiles,
@@ -10,12 +10,12 @@ module Base
 		}
 	}
 
-    entity CeramicFloorDarkGrayTiles
+    entity CeramicFloorDarkGreyTiles
     {
         component UiConfig
         {
             xuiSkin         = default,
-            entityStyle     = ES_CeramicFloorDarkGrayTiles,
+            entityStyle     = ES_CeramicFloorDarkGreyTiles,
             uiEnabled       = false,
         }
 

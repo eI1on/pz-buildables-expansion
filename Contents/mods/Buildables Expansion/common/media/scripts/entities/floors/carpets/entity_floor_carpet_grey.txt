@@ -2,7 +2,7 @@ module Base
 {
 	xuiSkin default
 	{
-		entity ES_FloorGrayCarpet
+		entity ES_FloorGreyCarpet
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Floor Grey Carpet,
@@ -10,12 +10,12 @@ module Base
 		}
 	}
 
-    entity FloorGrayCarpet
+    entity FloorGreyCarpet
     {
         component UiConfig
         {
             xuiSkin         = default,
-            entityStyle     = ES_FloorGrayCarpet,
+            entityStyle     = ES_FloorGreyCarpet,
             uiEnabled       = false,
         }
 
