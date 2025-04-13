@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Light Switch Right Side,
-			Icon		= building_menu_lighting_24,
+			Icon		= lighting_indoor_01_0,
 		}
 	}
 
@@ -21,32 +21,36 @@ module Base
 
         component SpriteConfig
         {
+		    isThumpable     = false,
+		    OnIsValid = BuildablesExpansion.RecipeCode.lightSwitch.OnIsValid,
+		    OnCreate = BuildablesExpansion.RecipeCode.lightSwitch.OnCreate,
+
             face N
             {
                 layer
                 {
-                    row = building_menu_lighting_27,
+                    row = lighting_indoor_01_3,
                 }
             }
             face E
             {
                 layer
                 {
-                    row = building_menu_lighting_29,
+                    row = lighting_indoor_01_5,
                 }
             }
             face S
             {
                 layer
                 {
-                    row = building_menu_lighting_24,
+                    row = lighting_indoor_01_0,
                 }
             }
             face W
             {
                 layer
                 {
-                    row = building_menu_lighting_31,
+                    row = lighting_indoor_01_7,
                 }
             }
         }

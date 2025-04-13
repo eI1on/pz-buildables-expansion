@@ -46,7 +46,7 @@ module Base
             timedAction   = BuildWireFence,
             time          = 200,
             needToBeLearn = true,
-            category      = Fences - High,
+            category      = Fences_High,
             SkillRequired = MetalWelding:7;Masonry:2,
             xpAward       = MetalWelding:15;Masonry:10,
             ToolTip       = Tooltip_craft_BigWiredFenceDesc,

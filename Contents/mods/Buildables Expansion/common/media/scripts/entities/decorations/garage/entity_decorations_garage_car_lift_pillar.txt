@@ -61,7 +61,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:2,
             xpAward       = MetalWelding:4,
-            category      = Decorations - Garage,
+            category      = Decorations_Garage,
             tags          = Welding,
             ToolTip       = Tooltip_craft_garageDecorationsDesc,
             inputs

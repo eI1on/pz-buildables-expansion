@@ -60,7 +60,7 @@ module Base
             timedAction   = BuildWallHammer,
             time          = 300,
             needToBeLearn = true,
-            category      = Doors - Wooden,
+            category      = Doors_Wooden,
             SkillRequired = Woodwork:7,
             xpAward       = Woodwork:6,
             ToolTip       = Tooltip_craft_RoughWoodenDoorDesc,

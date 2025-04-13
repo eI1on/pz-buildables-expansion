@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:4;Electricity:4,
             xpAward       = MetalWelding:10;Electricity:10,
-            category      = Appliances - Cooking,
+            category      = Appliances_Cooking,
             ToolTip       = Tooltip_craft_microwaveOvenDesc,
             inputs
             {

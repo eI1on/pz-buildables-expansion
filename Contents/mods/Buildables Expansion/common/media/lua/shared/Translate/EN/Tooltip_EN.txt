@@ -1,5 +1,10 @@
 Tooltip_EN = {
 
+    Tooltip_SketchBook_AlreadySketched = "Already sketched in this Builder's Sketchbook",
+    Tooltip_SketchBook_CanSketch = "Can sketch",
+    Tooltip_SketchBook_CannotSketch = "Cannot sketch",
+    Tooltip_SketchBook_SketchStatus = "Sketch status:",
+
     Tooltip_craft_pavedFloorDesc = "For when you're tired of tripping<br>over the undead and want something sturdier",
     Tooltip_craft_concreteFloorDesc = "A surface as hard as your will to<br>survive. It'll outlast you",
     Tooltip_craft_woodFloorDesc = "Because even the undead deserve a nice<br>wooden floor to shuffle across",

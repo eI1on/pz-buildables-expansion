@@ -22,7 +22,7 @@ module Base
         component SpriteConfig
         {
             needWindowFrame = true,
-            OnCreate = Base.RecipeCode.doubleWindowGlass.OnCreate,
+            OnCreate = BuildablesExpansion.RecipeCode.doubleWindowGlass.OnCreate,
 
             face W
             {

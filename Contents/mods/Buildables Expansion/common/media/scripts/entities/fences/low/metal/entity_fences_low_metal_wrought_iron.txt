@@ -47,7 +47,7 @@ module Base
             timedAction   = BuildPoleFenceSmall,
             time          = 150,
             needToBeLearn = true,
-            category      = Fences - Low,
+            category      = Fences_Low,
             SkillRequired = MetalWelding:5,
             xpAward       = MetalWelding:5,
             ToolTip       = Tooltip_craft_bigWroughtFenceDesc,

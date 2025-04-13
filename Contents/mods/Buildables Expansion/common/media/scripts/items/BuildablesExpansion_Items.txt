@@ -1,5 +1,4 @@
-module Base 
-{
+module Base {    
     item RefrigerantBottle {
         DisplayName = Refrigerant Bottle,
         DisplayCategory = LightSource,
@@ -381,6 +380,16 @@ module Base
         StaticModel = Magazine,
         WorldStaticModel = DecorationsGuideRoadwayGarageGround,
         Tags = Magazine,
+    }
+
+    item BuildersSketchbook {
+        DisplayName = Builder's Sketchbook,
+        DisplayCategory = Literature,
+        Type = Literature,
+        Weight = 1,
+        Icon = Notebook,
+        StaticModel = EmptyNotebook,
+        WorldStaticModel = EmptyNotebook,
     }
 
 }

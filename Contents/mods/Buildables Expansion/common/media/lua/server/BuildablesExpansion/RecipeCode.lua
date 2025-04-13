@@ -1,31 +1,32 @@
-BuildablesExpansion = BuildablesExpansion or {};
-BuildablesExpansion.RecipeCode = {};
+BuildablesExpansion = BuildablesExpansion or {}
+BuildablesExpansion.RecipeCode = {}
 
-BuildablesExpansion.RecipeCode.floorOverlay = {};
-BuildablesExpansion.RecipeCode.doubleWindowGlass = {};
-BuildablesExpansion.RecipeCode.stairs = {};
-BuildablesExpansion.RecipeCode.garageDoors = {};
+BuildablesExpansion.RecipeCode.floorOverlay = {}
+BuildablesExpansion.RecipeCode.doubleWindowGlass = {}
+BuildablesExpansion.RecipeCode.stairs = {}
+BuildablesExpansion.RecipeCode.garageDoors = {}
+BuildablesExpansion.RecipeCode.lightSwitch = {}
 
 
 function BuildablesExpansion.RecipeCode.floorOverlay.OnIsValid(params)
     if params.square:getZ() > 0 then
-        local below = getCell():getGridSquare(params.square:getX(), params.square:getY(), params.square:getZ() - 1);
+        local below = getCell():getGridSquare(params.square:getX(), params.square:getY(), params.square:getZ() - 1)
         if below and below:HasStairs() then
-            return false;
+            return false
         end
     end
 
-    local tileInfoSprite = params.tileInfo:getSpriteName();
+    local tileInfoSprite = params.tileInfo:getSpriteName()
 
     for i = 0, params.square:getObjects():size() - 1 do
-        local object = params.square:getObjects():get(i); ---@type IsoObject
-        local attachedAnimSprites = object:getAttachedAnimSprite();
+        local object = params.square:getObjects():get(i) ---@type IsoObject
+        local attachedAnimSprites = object:getAttachedAnimSprite()
         if attachedAnimSprites and attachedAnimSprites:size() > 0 then
             for i = 0, attachedAnimSprites:size() - 1 do
-                local attachedAnimSprite = attachedAnimSprites:get(i); ---@type IsoSpriteInstance
+                local attachedAnimSprite = attachedAnimSprites:get(i) ---@type IsoSpriteInstance
                 if attachedAnimSprite then
                     if (attachedAnimSprite:getName() and attachedAnimSprite:getName() == tileInfoSprite) then
-                        return false;
+                        return false
                     end
                 end
             end
@@ -33,96 +34,124 @@ function BuildablesExpansion.RecipeCode.floorOverlay.OnIsValid(params)
     end
 
     if not params.square:connectedWithFloor() then
-        return false;
+        return false
     end
 
-    params.testCollisions = false; -- we have already tested this
+    params.testCollisions = false -- we have already tested this
 
-    return true;
+    return true
 end
 
 function BuildablesExpansion.RecipeCode.floorOverlay.OnCreate(thumpable)
-    local square = thumpable:getSquare();
-    local objects = square:getObjects();
+    local square = thumpable:getSquare()
+    local objects = square:getObjects()
 
-    local spriteInstance = getSprite(thumpable:getSprite():getName()):newInstance();
+    local spriteInstance = getSprite(thumpable:getSprite():getName()):newInstance()
 
-    local rug = nil;
-    local floorObject;
+    local rug = nil
+    local floorObject
     for i = 0, objects:size() - 1 do
-        local object = objects:get(i);
+        local object = objects:get(i)
         if object and object ~= thumpable then
-            local objProps = object:getProperties();
+            local objProps = object:getProperties()
 
             if object:getTextureName() ~= nil and string.contains(object:getTextureName(), "floors_rugs") then
-                rug = object;
+                rug = object
             end
 
             if (objProps and objProps:Is(IsoFlagType.solidfloor) and not objProps:Is(IsoFlagType.taintedWater)) or object:isFloor() then
-                local attachedAnimSprite = object:getAttachedAnimSprite();
+                local attachedAnimSprite = object:getAttachedAnimSprite()
                 if not attachedAnimSprite then
-                    attachedAnimSprite = ArrayList:new();
-                    object:setAttachedAnimSprite(attachedAnimSprite);
+                    attachedAnimSprite = ArrayList:new()
+                    object:setAttachedAnimSprite(attachedAnimSprite)
                 end
-                attachedAnimSprite:add(spriteInstance);
-                if isClient() then object:transmitUpdatedSpriteToServer(); end
-                floorObject = object;
-                break;
+                attachedAnimSprite:add(spriteInstance)
+                if isClient() then object:transmitUpdatedSpriteToServer() end
+                floorObject = object
+                break
             end
         end
     end
-    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable);
+    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable)
 
     if rug ~= nil then
         -- ensure floor under rug
-        local rugIndex = objects:indexOf(rug);
-        local floorIndex = objects:indexOf(floorObject);
+        local rugIndex = objects:indexOf(rug)
+        local floorIndex = objects:indexOf(floorObject)
         if rugIndex < floorIndex then
             -- swap position
-            objects:set(rugIndex, floorObject);
-            objects:set(floorIndex, rug);
+            objects:set(rugIndex, floorObject)
+            objects:set(floorIndex, rug)
         end
     end
 
-    square:EnsureSurroundNotNull();
-    square:RecalcProperties();
+    square:EnsureSurroundNotNull()
+    square:RecalcProperties()
 
-    square:clearWater();
-    square:disableErosion();
-    local args = { x = square:getX(), y = square:getY(), z = square:getZ() };
-    sendServerCommand('erosion', 'disableForSquare', args);
+    square:clearWater()
+    square:disableErosion()
+    local args = { x = square:getX(), y = square:getY(), z = square:getZ() }
+    sendServerCommand('erosion', 'disableForSquare', args)
 
-    invalidateLighting();
-    square:setSquareChanged();
-    floorObject:invalidateRenderChunkLevel(FBORenderChunk.DIRTY_OBJECT_ADD);
+    invalidateLighting()
+    square:setSquareChanged()
+    floorObject:invalidateRenderChunkLevel(FBORenderChunk.DIRTY_OBJECT_ADD)
 end
 
 function BuildablesExpansion.RecipeCode.doubleWindowGlass.OnCreate(thumpable)
-    local sprite = thumpable:getSprite():getName();
+    local sprite = thumpable:getSprite():getName()
 
-    local window = IsoWindow.new(getCell(), thumpable:getSquare(), thumpable:getSprite(), thumpable:getNorth());
-    window:setIsLocked(false);
-    thumpable:getSquare():AddSpecialObject(window);
+    local window = IsoWindow.new(getCell(), thumpable:getSquare(), thumpable:getSprite(), thumpable:getNorth())
+    window:setIsLocked(false)
+    thumpable:getSquare():AddSpecialObject(window)
 
-    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable);
+    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable)
 end
 
 function BuildablesExpansion.RecipeCode.stairs.OnIsValid(params)
-    return true;
+    return true
 end
 
 --- @param thumpable IsoThumpable
 function BuildablesExpansion.RecipeCode.garageDoors.OnCreate(thumpable)
-    local garageDoor = IsoDoor.new(getCell(), thumpable:getSquare(), thumpable:getSprite(), thumpable:getNorth());
+    local garageDoor = IsoDoor.new(getCell(), thumpable:getSquare(), thumpable:getSprite(), thumpable:getNorth())
 
-    garageDoor:setName(thumpable:getName());
-    garageDoor:setModData(copyTable(thumpable:getModData()));
-    garageDoor:setKeyId(thumpable:getKeyId());
-    garageDoor:setIsLocked(false);
-    garageDoor:setLockedByKey(false);
-    garageDoor:setHealth(thumpable:getHealth());
+    garageDoor:setName(thumpable:getName())
+    garageDoor:setModData(copyTable(thumpable:getModData()))
+    garageDoor:setKeyId(thumpable:getKeyId())
+    garageDoor:setIsLocked(false)
+    garageDoor:setLockedByKey(false)
+    garageDoor:setHealth(thumpable:getHealth())
 
-    thumpable:getSquare():AddSpecialObject(garageDoor);
+    thumpable:getSquare():AddSpecialObject(garageDoor)
 
-    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable);
+    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable)
+end
+
+--- @param thumpable IsoThumpable
+function BuildablesExpansion.RecipeCode.lightSwitch.OnCreate(thumpable)
+    local square = thumpable:getSquare()
+    local sprite = thumpable:getSprite()
+    local tileIsoObjectType = sprite:getType()
+
+    local props = sprite and sprite:getProperties()
+    if props and tileIsoObjectType == IsoObjectType.lightswitch then
+        if props:Is("streetlight") then
+            createTile(sprite:getName(), square)
+            getPlayer():setHaloNote("Light tiles will be updated when zone will be reloaded")
+        else
+            local lightSwitch = IsoLightSwitch.new(getCell(), square, sprite, square:getRoomID())
+            lightSwitch:addLightSourceFromSprite()
+            thumpable:getSquare():AddSpecialObject(lightSwitch)
+        end
+    end
+
+    thumpable:getSquare():transmitRemoveItemFromSquare(thumpable)
+end
+
+function BuildablesExpansion.RecipeCode.lightSwitch.OnIsValid(params)
+    if params.square:isOutside() then
+        return false
+    end
+    return true
 end

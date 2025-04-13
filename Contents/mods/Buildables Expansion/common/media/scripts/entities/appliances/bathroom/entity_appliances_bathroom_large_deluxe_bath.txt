@@ -59,7 +59,7 @@ module Base
             timedAction   = BuildMetalStructureMedium,
             time          = 200,
             needToBeLearn = true,
-            category      = Appliances - Bathroom,
+            category      = Appliances_Bathroom,
             SkillRequired = MetalWelding:4;Masonry:6,
             xpAward       = MetalWelding:5;Masonry:10,
             ToolTip       = Tooltip_craft_showerDesc,

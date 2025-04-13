@@ -40,7 +40,7 @@ module Base
             timedAction   = BuildLowHammer,
             time          = 200,
             needToBeLearn = true,
-            category      = Floors - Wooden,
+            category      = Floors_Wooden,
             SkillRequired = Woodwork:2,
             xpAward       = Woodwork:2,
             ToolTip       = Tooltip_craft_woodFloorDesc,

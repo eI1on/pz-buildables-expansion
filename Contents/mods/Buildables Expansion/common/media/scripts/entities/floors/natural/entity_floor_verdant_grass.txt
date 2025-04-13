@@ -39,7 +39,7 @@ module Base
             OnAddToMenu   = genericOnAddToMenu,
             timedAction   = EmptyBag,
             time          = 100,
-            category      = Floors - Natural,
+            category      = Floors_Natural,
             SkillRequired = Farming:1,
             xpAward       = Farming:1,
             ToolTip       = Tooltip_craft_dirtFloorDesc,

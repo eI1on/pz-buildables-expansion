@@ -22,8 +22,8 @@ module Base
         component SpriteConfig
         {
 		    isThumpable     = false,
-		    OnIsValid = Base.RecipeCode.floorOverlay.OnIsValid,
-		    OnCreate = Base.RecipeCode.floorOverlay.OnCreate,
+		    OnIsValid = BuildablesExpansion.RecipeCode.floorOverlay.OnIsValid,
+		    OnCreate = BuildablesExpansion.RecipeCode.floorOverlay.OnCreate,
 			
             face W
             {
@@ -64,7 +64,7 @@ module Base
             timedAction   = BuildLowNoTool,
             time          = 200,
             needToBeLearn = true,
-            category      = Floors - Paved,
+            category      = Floors_Paved,
             tags          = Masonry,
             SkillRequired = Masonry:1,
             xpAward       = Masonry:5,

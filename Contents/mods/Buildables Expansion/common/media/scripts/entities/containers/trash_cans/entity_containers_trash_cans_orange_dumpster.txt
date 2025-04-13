@@ -46,7 +46,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:7,
             xpAward       = MetalWelding:15,
-            category      = Containers - Trashcans,
+            category      = Containers_Trashcans,
             tags          = Welding,
             ToolTip       = Tooltip_craft_trashCanDesc,
             inputs

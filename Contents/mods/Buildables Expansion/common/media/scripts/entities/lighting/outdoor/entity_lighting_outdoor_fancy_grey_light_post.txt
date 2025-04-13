@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Fancy Grey Light Post,
-			Icon		= building_menu_lighting_2,
+			Icon		= lighting_outdoor_01_2,
 		}
 	}
 
@@ -21,11 +21,14 @@ module Base
 
         component SpriteConfig
         {
-            face N
+		    isThumpable     = false,
+		    OnCreate = BuildablesExpansion.RecipeCode.lightSwitch.OnCreate,
+
+            face E
             {
                 layer
                 {
-                    row = building_menu_lighting_2,
+                    row = lighting_outdoor_01_2,
                 }
             }
         }

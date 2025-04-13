@@ -44,7 +44,7 @@ module Base
             time          = 350,
             SkillRequired = Woodwork:6,
             xpAward       = Woodwork:5,
-            category      = Containers - Bookshelves,
+            category      = Containers_Bookshelves,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_bookshelvesDesc,
             inputs

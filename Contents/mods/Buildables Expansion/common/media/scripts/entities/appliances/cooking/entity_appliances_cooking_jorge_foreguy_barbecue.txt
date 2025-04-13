@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:5,
             xpAward       = MetalWelding:10,
-            category      = Appliances - Cooking,
+            category      = Appliances_Cooking,
             ToolTip       = Tooltip_craft_barbecueDesc,
             inputs
             {

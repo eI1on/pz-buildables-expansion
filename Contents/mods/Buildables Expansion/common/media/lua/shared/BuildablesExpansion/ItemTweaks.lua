@@ -1,4 +1,4 @@
-local Logger = require("BuildablesExpansion/Logger");
+local Logger = require("BuildablesExpansion/Logger")
 
 local function tweakItems()
     local recipeMap = {
@@ -59,9 +59,9 @@ local function tweakItems()
         },
         ["Base.FineWoodWorking_Furniture_Dressers"] = {
             -- Dressers
-            "FancyDarkWardrobe", "LightWoodWardrobe", "FancyWhiteWardrobe", "LargeWardrobe", "FancyOakWardrobe",
-            "SmallTableWithDrawer", "MirrorAndDrawers", "LightWoodWardrobe", "LightWoodDrawers", "LargeWardrobe",
-            "FancyWhiteWardrobe", "FancyWhiteDrawers", "FancyOakWardrobe", "FancyOakDrawers", "FancyDarkWardrobe",
+            "FancyDarkWardrobe", "LightWoodWardrobe", "FancyWhiteWardrobe",
+            "SmallTableWithDrawer", "MirrorAndDrawers", "LightWoodDrawers", "LargeWardrobe",
+            "FancyWhiteDrawers", "FancyOakWardrobe", "FancyOakDrawers",
             "FancyDarkDrawers", "BedroomDrawers",
         },
         ["Base.FineWoodWorking_Furniture_Crates"] = {
@@ -173,7 +173,7 @@ local function tweakItems()
             -- Metal Gates
             "DoubleWroughtIronGate",
             -- Garage Doors
-            "3TileWhiteGarageDoor", "3TileRollingGarageDoor", "3TileGreenGarageDoor", "3TileGreenGarageDoor",
+            "3TileWhiteGarageDoor", "3TileRollingGarageDoor", "3TileGreenGarageDoor",
             -- Garage Doors with Windows
             "3TileRollingWindowGarageDoor", "3TileRedWindowGarageDoor",
         },
@@ -229,14 +229,19 @@ local function tweakItems()
     }
 
     for itemID, recipes in pairs(recipeMap) do
-        local item = ScriptManager.instance:getItem(itemID);
+        local item = ScriptManager.instance:getItem(itemID)
         if item then
-            local taughtRecipes = item:getTeachedRecipes();
+            local taughtRecipes = item:getTeachedRecipes()
             for i = 1, #recipes do
-                taughtRecipes:add(recipes[i]);
+                taughtRecipes:add(recipes[i])
             end
         end
     end
 end
 
-Events.OnInitGlobalModData.Add(tweakItems);
+Events.OnInitGlobalModData.Add(function()
+    local settings = SandboxVars.BuildablesExpansion
+    if settings and (settings.unlockingMethod == 1 or settings.unlockingMethod == 2) then
+        tweakItems()
+    end
+end)

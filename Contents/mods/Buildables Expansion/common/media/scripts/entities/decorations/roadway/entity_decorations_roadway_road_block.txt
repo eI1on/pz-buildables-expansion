@@ -47,7 +47,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:2,
             xpAward       = Woodwork:10,
-            category      = Decorations - Roadway,
+            category      = Decorations_Roadway,
             tags          = Carpentry,
             ToolTip       = Tooltip_craft_roadwayDecorationsDesc,
             inputs

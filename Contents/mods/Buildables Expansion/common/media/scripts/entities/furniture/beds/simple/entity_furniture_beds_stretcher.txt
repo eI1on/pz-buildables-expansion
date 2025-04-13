@@ -46,7 +46,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:2,
             xpAward       = MetalWelding:7,
-            category      = Furniture - Beds,
+            category      = Furniture_Beds,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_bedDesc,
             inputs

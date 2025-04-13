@@ -47,7 +47,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:7;Electricity:5,
             xpAward       = MetalWelding:10;Electricity:15,
-            category      = Appliances - Fridges,
+            category      = Appliances_Fridges,
             ToolTip       = Tooltip_craft_fridgeDesc,
             inputs
             {

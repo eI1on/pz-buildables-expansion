@@ -63,7 +63,7 @@ module Base
             OnAddToMenu   = genericOnAddToMenu,
             timedAction   = BuildLowNoTool,
             time          = 200,
-            category      = Floors - Natural,
+            category      = Floors_Natural,
             ToolTip       = Tooltip_craft_gravelFloorDesc,
             inputs
             {

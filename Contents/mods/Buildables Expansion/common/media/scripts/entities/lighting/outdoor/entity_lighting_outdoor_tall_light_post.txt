@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Tall Light Post,
-			Icon		= building_menu_lighting_10,
+			Icon		= lighting_outdoor_01_10,
 		}
 	}
 
@@ -25,28 +25,28 @@ module Base
             {
                 layer
                 {
-                    row = building_menu_lighting_8,
+                    row = lighting_outdoor_01_8,
                 }
             }
             face E
             {
                 layer
                 {
-                    row = building_menu_lighting_9,
+                    row = lighting_outdoor_01_9,
                 }
             }
             face S
             {
                 layer
                 {
-                    row = building_menu_lighting_10,
+                    row = lighting_outdoor_01_10,
                 }
             }
             face W
             {
                 layer
                 {
-                    row = building_menu_lighting_11,
+                    row = lighting_outdoor_01_11,
                 }
             }
         }

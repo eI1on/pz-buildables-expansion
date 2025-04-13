@@ -40,7 +40,7 @@ module Base
             timedAction   = SewingCloth,
             time          = 200,
             needToBeLearn = true,
-            category      = Floors - Carpets,
+            category      = Floors_Carpets,
             SkillRequired = Tailoring:3,
             xpAward       = Tailoring:5,
             ToolTip       = Tooltip_craft_carpetFloorDesc,

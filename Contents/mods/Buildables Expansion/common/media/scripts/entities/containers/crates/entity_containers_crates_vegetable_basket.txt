@@ -45,7 +45,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:2,
             xpAward       = Woodwork:7,
-            category      = Containers - Crates,
+            category      = Containers_Crates,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_vegetableBasketDesc,
             inputs

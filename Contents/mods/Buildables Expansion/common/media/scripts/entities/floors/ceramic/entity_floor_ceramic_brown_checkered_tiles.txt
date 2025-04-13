@@ -40,7 +40,7 @@ module Base
             timedAction   = BuildLowNoTool,
             time          = 200,
             needToBeLearn = true,
-            category      = Floors - Ceramic,
+            category      = Floors_Ceramic,
             tags          = Masonry,
             SkillRequired = Masonry:4,
             xpAward       = Masonry:10,

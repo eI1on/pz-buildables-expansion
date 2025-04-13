@@ -64,7 +64,7 @@ module Base
             timedAction   = BuildLowNoTool,
             time          = 200,
             needToBeLearn = true,
-            category      = Floors - Paved,
+            category      = Floors_Paved,
             tags          = Masonry,
             SkillRequired = Masonry:1,
             xpAward       = Masonry:5,

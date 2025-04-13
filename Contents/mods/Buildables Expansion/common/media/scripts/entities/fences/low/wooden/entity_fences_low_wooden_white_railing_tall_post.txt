@@ -54,7 +54,7 @@ module Base
             timedAction   = BuildWoodenStructureSmall,
             time          = 150,
             needToBeLearn = true,
-            category      = Fences - Low,
+            category      = Fences_Low,
             SkillRequired = Woodwork:7,
             xpAward       = Woodwork:6,
             ToolTip       = Tooltip_craft_woodenFenceDesc,

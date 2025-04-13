@@ -61,7 +61,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:1;MetalWelding:2,
             xpAward       = Woodwork:2;MetalWelding:4,
-            category      = Decorations - Roadway,
+            category      = Decorations_Roadway,
             tags          = Welding,
             ToolTip       = Tooltip_craft_roadwayDecorationsDesc,
             inputs

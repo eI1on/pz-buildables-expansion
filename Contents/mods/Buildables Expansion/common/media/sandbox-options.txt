@@ -1,0 +1,11 @@
+VERSION = 1,
+
+option BuildablesExpansion.unlockingMethod
+{
+    type = enum,
+    numValues = 3,
+    default = 2,
+    page = BuildablesExpansion,
+    translation = UnlockingMethod,
+    valueTranslation = BuildablesExpansion_unlockingMethod,
+}

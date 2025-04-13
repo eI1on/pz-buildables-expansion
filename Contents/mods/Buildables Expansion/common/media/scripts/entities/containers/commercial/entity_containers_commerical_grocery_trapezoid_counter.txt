@@ -25,28 +25,28 @@ module Base
             {
                 layer
                 {
-                    row = location_shop_greenes_01_29,
+                    row = location_shop_greenes_01_30,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = location_shop_greenes_01_28,
+                    row = location_shop_greenes_01_31,
                 }
             }
             face E
             {
                 layer
                 {
-                    row = location_shop_greenes_01_30,
+                    row = location_shop_greenes_01_29,
                 }
             }
             face S
             {
                 layer
                 {
-                    row = location_shop_greenes_01_31,
+                    row = location_shop_greenes_01_28,
                 }
             }
         }
@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:7,
             xpAward       = Woodwork:5,
-            category      = Containers - Commercial,
+            category      = Containers_Commercial,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_commercialCounterDesc,
             inputs

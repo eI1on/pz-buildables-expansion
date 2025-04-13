@@ -21,7 +21,7 @@ module Base
 
         component SpriteConfig
         {
-            face E
+            face S
             {
                 layer
                 {
@@ -29,7 +29,7 @@ module Base
                     row = location_restaurant_spiffos_02_36,
                 }
             }
-            face S
+            face E
             {
                 layer
                 {
@@ -46,7 +46,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:5,
             xpAward       = Woodwork:5,
-            category      = Furniture - Tables,
+            category      = Furniture_Tables,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_tableDesc,
             inputs

@@ -21,14 +21,14 @@ module Base
 
         component SpriteConfig
         {
-            face W
+            face E
             {
                 layer
                 {
                     row = furniture_tables_low_01_21,
                 }
             }
-            face N
+            face S
             {
                 layer
                 {
@@ -45,7 +45,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:5,
             xpAward       = Woodwork:5,
-            category      = Furniture - Tables,
+            category      = Furniture_Tables,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_tableDesc,
             inputs

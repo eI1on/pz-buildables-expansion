@@ -42,7 +42,7 @@ module Base
             OnAddToMenu   = genericOnAddToMenu,
             timedAction   = BuildMetalStructureMedium,
             time          = 200,
-            category      = Appliances - Laundry,
+            category      = Appliances_Laundry,
             SkillRequired = MetalWelding:2,
             xpAward       = MetalWelding:7,
             ToolTip       = Tooltip_craft_washingBinDesc,

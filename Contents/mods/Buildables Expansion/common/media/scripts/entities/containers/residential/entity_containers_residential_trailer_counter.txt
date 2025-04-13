@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:7,
             xpAward       = Woodwork:5,
-            category      = Containers - Residential,
+            category      = Containers_Residential,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_residentialCounterDesc,
             inputs

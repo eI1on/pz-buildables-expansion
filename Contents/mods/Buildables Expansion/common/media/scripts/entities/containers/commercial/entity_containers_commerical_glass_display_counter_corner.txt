@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Glass Display Counter,
-			Icon		= location_shop_generic_01_100,
+			Icon		= location_shop_generic_01_96,
 		}
 	}
 
@@ -25,28 +25,28 @@ module Base
             {
                 layer
                 {
-                    row = location_shop_generic_01_102,
+                    row = location_shop_generic_01_98,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = location_shop_generic_01_96,
+                    row = location_shop_generic_01_100,
                 }
             }
             face E
             {
                 layer
                 {
-                    row = location_shop_generic_01_98,
+                    row = location_shop_generic_01_102,
                 }
             }
             face S
             {
                 layer
                 {
-                    row = location_shop_generic_01_100,
+                    row = location_shop_generic_01_96,
                 }
             }
         }
@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:7,
             xpAward       = Woodwork:5,
-            category      = Containers - Commercial,
+            category      = Containers_Commercial,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_commercialCounterDesc,
             inputs

@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Flood Lights,
-			Icon		= building_menu_lighting_5,
+			Icon		= lighting_outdoor_01_49,
 		}
 	}
 
@@ -25,28 +25,28 @@ module Base
             {
                 layer
                 {
-                    row = building_menu_lighting_7,
+                    row = lighting_outdoor_01_51,
                 }
             }
             face E
             {
                 layer
                 {
-                    row = building_menu_lighting_4,
+                    row = lighting_outdoor_01_48,
                 }
             }
             face S
             {
                 layer
                 {
-                    row = building_menu_lighting_5,
+                    row = lighting_outdoor_01_49,
                 }
             }
             face W
             {
                 layer
                 {
-                    row = building_menu_lighting_6,
+                    row = lighting_outdoor_01_50,
                 }
             }
         }

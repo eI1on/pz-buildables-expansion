@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Concrete Corner Floor,
-			Icon		= building_menu_floors_01_3,
+			Icon		= buildables_expansion_floors_01_3,
 		}
 	}
 
@@ -29,7 +29,7 @@ module Base
             {
                 layer
                 {
-                    row = building_menu_floors_01_3,
+                    row = buildables_expansion_floors_01_3,
                 }
             }
             
@@ -37,7 +37,7 @@ module Base
             {
                 layer
                 {
-                    row = building_menu_floors_01_1,
+                    row = buildables_expansion_floors_01_1,
                 }
             }
             
@@ -45,7 +45,7 @@ module Base
             {
                 layer
                 {
-                    row = building_menu_floors_01_4,
+                    row = buildables_expansion_floors_01_4,
                 }
             }
             
@@ -53,7 +53,7 @@ module Base
             {
                 layer
                 {
-                    row = building_menu_floors_01_2,
+                    row = buildables_expansion_floors_01_2,
                 }
             }
         }
@@ -65,7 +65,7 @@ module Base
             time          = 200,
             needToBeLearn = true,
             tags          = Masonry,
-            category      = Floors - Concrete,
+            category      = Floors_Concrete,
             SkillRequired = Masonry:2,
             xpAward       = Masonry:7,
             ToolTip       = Tooltip_craft_concreteFloorDesc,

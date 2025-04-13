@@ -24,7 +24,7 @@ module Base
 			skillBaseHealth = 300,
 			DontNeedFrame	= true,
 			breakSound      = BreakDoor,
-		    OnCreate = Base.RecipeCode.garageDoors.OnCreate,
+		    OnCreate = BuildablesExpansion.RecipeCode.garageDoors.OnCreate,
 			
             face W
             {
@@ -50,7 +50,7 @@ module Base
             timedAction   = BuildWallMetal,
             time          = 450,
             needToBeLearn = true,
-            category      = Doors - Garage,
+            category      = Doors_Garage,
             SkillRequired = MetalWelding:8,
             xpAward       = MetalWelding:15,
             ToolTip       = Tooltip_craft_metalDoorDesc,

@@ -40,15 +40,15 @@ module Base
             {
                 layer
                 {
-                    row = furniture_bedding_01_76 furniture_bedding_01_77,
+                    row = furniture_bedding_01_78 furniture_bedding_01_79,
                 }
             }
             face N
             {
                 layer
                 {
-                    row = furniture_bedding_01_79,
-                    row = furniture_bedding_01_78,
+                    row = furniture_bedding_01_77,
+                    row = furniture_bedding_01_76,
                 }
             }
         }
@@ -61,7 +61,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:6,
             xpAward       = Woodwork:15,
-            category      = Furniture - Beds,
+            category      = Furniture_Beds,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_bedDesc,
             inputs

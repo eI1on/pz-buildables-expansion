@@ -61,7 +61,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:6,
             xpAward       = Woodwork:10,
-            category      = Furniture - Seating,
+            category      = Furniture_Seating,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_benchesDesc,
             inputs

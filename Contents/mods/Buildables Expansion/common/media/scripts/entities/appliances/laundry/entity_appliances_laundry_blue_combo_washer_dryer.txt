@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:6;Electricity:4,
             xpAward       = MetalWelding:15;Electricity:10,
-            category      = Appliances - Laundry,
+            category      = Appliances_Laundry,
             ToolTip       = Tooltip_craft_laundryMachinesDesc,
             inputs
             {

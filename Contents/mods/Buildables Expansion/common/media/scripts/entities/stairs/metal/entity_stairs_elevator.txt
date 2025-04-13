@@ -48,7 +48,7 @@ module Base
             timedAction   = BuildWallMetal,
             time          = 300,
             needToBeLearn = true,
-            category      = Stairs - Metal,
+            category      = Stairs_Metal,
             SkillRequired = MetalWelding:7,
             xpAward       = MetalWelding:10,
             ToolTip       = Tooltip_craft_stairsDesc,

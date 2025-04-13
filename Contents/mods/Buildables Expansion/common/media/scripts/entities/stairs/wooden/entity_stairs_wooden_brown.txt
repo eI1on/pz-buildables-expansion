@@ -50,7 +50,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:7,
             xpAward       = Woodwork:15,
-            category      = Stairs - Wood,
+            category      = Stairs_Wood,
             ToolTip       = Tooltip_craft_stairsDesc,
             inputs
             {

@@ -18,4 +18,21 @@ module Base
 		}
 	}
 
+	craftRecipe MakeBuildersSketchbook
+	{
+		Time = 500,
+        Tags = InHandCraft;CannotBeResearched,
+        timedAction = Making,
+        needTobeLearn = false,
+		inputs
+		{
+			item 1 [Base.Notebook],
+			item 1 tags[Write] mode:keep,
+		}
+		outputs
+		{
+			item 1 Base.BuildersSketchbook,
+		}
+	}
+
 }

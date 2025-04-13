@@ -1,7 +1,52 @@
 version=1
-id=
+id=3463117260
 title=[B42] Buildables Expansion
+description=[i]A continuation of my popular [b]Building Menu[/b] mod - rebuilt for Build 42 with new content, new systems, and expanded possibilities.[/i]
 description=
+description=[h2]What Is This Mod?[/h2]
+description=This mod expands on the vanilla build menu introduced by the developers in Build 42. It continues the legacy of my original [b]Building Menu[/b] mod - which pioneered a custom UI for building before the devs added one to the base game.
+description=
+description=[b]Buildables Expansion[/b] picks up where that mod left off, adding dozens of immersive and lore-friendly buildables not included in vanilla. It extends your crafting freedom with [b]furniture, appliances, stairs, fences, floors, lighting, windows, and more[/b] - all with a focus on realism and depth.
+description=
+description=[hr][/hr]
+description=[h2]Unlock Buildables Through Discovery[/h2]
+description=Choose how your character learns to build. [b]Three unlocking styles[/b] are available via sandbox options:
+description=[list]
+description=[*][b]Learned + Sketched (Combined):[/b] Find [i]vintage magazines[/i] [b]or[/b] [i]sketch real objects[/i] in the world using your Builder's Sketchbook
+description=[*][b]Magazine Only:[/b] Unlock new items exclusively by reading lore-based magazines like [i]Fine Wood Working[/i], [i]The Family Handyman[/i], [i]Popular Mechanics[/i] and more
+description=[*][b]Sketchbook Only:[/b] Using the [b]Builder's Sketchbook[/b] by researching items in the world and sketching them manually
+description=[/list]
+description=
+description=Magazines are lootable, limited, and tied to specific buildable groups. The sketchbook offers a hands-on alternative - find the object, examine it, draw it, build it.
+description=[img]https://raw.githubusercontent.com/eI1on/workshop_resources/refs/heads/main/buildables_expansion/magazines.png[/img]
+description=
+description=[b]The Builder's Sketchbook[/b] is crafted with a notebook and pen, and allows you to sketch world objects as you find them.
+description=[u]Sketching does not allow you to build directly from the sketchbook[/u]; instead, [b]it unlocks those buildables inside the standard build menu[/b] as long as you are carrying the sketchbook where the sketch for the object was drawn.
+description=
+description=[img]https://raw.githubusercontent.com/eI1on/workshop_resources/refs/heads/main/buildables_expansion/sketchbook.png[/img]
+description=
+description=[hr][/hr]
+description=[h2]New Objects & Crafting Materials[/h2]
+description=This mod adds a growing library of buildables and construction components:
+description=[list]
+description=[*]Realistic appliances like [b]fridges, stoves, and washers[/b]
+description=[*]New floors: [i]wood, ceramic, concrete, metal, and natural[/i]
+description=[*]Decorative rugs, road markings, fences, and signs
+description=[*]Craftable beds, chairs, counters, and lighting fixtures
+description=[*]DIY parts: [i]insulation foam, rubber seals, refrigerant bottles, copper pipes[/i], and more
+description=[/list]
+description=
+description=Crafting recipes often mimic real-world requirements - specialized components, salvageable parts, and detailed resources all play a role.
+description=
+description=[hr][/hr]
+description=[h2]Lore-Driven Learning[/h2]
+description=Buildables Expansion introduces a system where crafting knowledge comes from [b]discovery[/b], not from the start.
+description=
+description=Find 1980s and 90s-era magazines such as [i]Home Mechanix, Fine Wood Working, Architectural Digest[/i], and more. Or, draw objects yourself using the [b]Builder's Sketchbook[/b].
+description=
+description=Want to rebuild civilization? You'll have to [i]scavenge knowledge[/i] - or sketch it.
+description=
+description=[hr][/hr]
 description=
 description=[url=https://discord.gg/asA9BuAasd] [img] https://raw.githubusercontent.com/eI1on/workshop_resources/main/workshop_images/Workshop_Desc_PZ_Modding_Disc.png [/img] [/url]
 description=[img] https://imgur.com/eZp8dXD.png [/img]
@@ -10,6 +55,6 @@ description=[quote=author]
 description=This mod's permissions fall under TIS's policy [url=https://theindiestone.com/forums/index.php?/topic/2530-mod-permissions/] On Lockdown [/url]
 description=This mod cannot be modified by anyone else, for anything else, at all, ever. Even if the user disappears, they would much rather you didn't touch the fruits of their hard labour.
 description=[/quote]
-description=[url=https://theindiestone.com/forums/index.php/topic/2530-mod-permissions/?p=36479][img] https://i.imgur.com/UJYBoAp.png [/img][/url]
-tags=Build 42;Balance;Items;Misc;QoL
-visibility=unlisted
+description=[url=http://theindiestone.com/forums/index.php/topic/2530-mod-permissions/?p=36479][img] https://raw.githubusercontent.com/eI1on/workshop_resources/main/mod_permissions_images/on_lockdown.png [/img][/url]
+tags=Build 42;Balance;Building;Framework;Interface;Items;Misc;Realistic;QoL;WIP
+visibility=public

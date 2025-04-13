@@ -38,7 +38,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:5,
             xpAward       = Woodwork:5,
-            category      = Furniture - Tables,
+            category      = Furniture_Tables,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_tableDesc,
             inputs

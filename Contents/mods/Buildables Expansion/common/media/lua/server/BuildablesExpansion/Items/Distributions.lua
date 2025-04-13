@@ -1,186 +1,325 @@
-local proceduralDistributions = ProceduralDistributions.list;
-local tableInsert = table.insert;
+local proceduralDistributions = ProceduralDistributions.list
+local table_insert = table.insert
 
-local function processAndInsertItems(itemDistributions)
-    for item, distributions in pairs(itemDistributions) do
-        for i = 1, #distributions, 2 do
-            local distributionName = distributions[i];
-            local chance = distributions[i + 1];
+local function addToDistribution(distributionName, item, chance)
+    local distributionList = proceduralDistributions[distributionName].items
+    table_insert(distributionList, item)
+    table_insert(distributionList, chance)
+end
 
-            local distributionList = proceduralDistributions[distributionName].items;
+local DISTRIBUTION_LISTS = {
+    CARPENTRY_MAGAZINES    = {
+        "BookstoreMisc", 2,
+        "CrateMagazines", 1,
+        "LibraryMagazines", 1,
+        "LivingRoomShelf", 0.1,
+        "LivingRoomShelfClassy", 0.1,
+        "LivingRoomShelfRedneck", 0.1,
+        "LivingRoomSideTable", 0.1,
+        "LivingRoomSideTableClassy", 0.1,
+        "LivingRoomSideTableRedneck", 0.1,
+        "LivingRoomWardrobe", 0.1,
+        "MagazineRackMixed", 1,
+        "PostOfficeMagazines", 1,
+        "RecRoomShelf", 0.1,
+        "SafehouseBookShelf", 1,
+        "SafehouseFireplace", 0.1,
+        "SafehouseFireplace_Late", 0.1,
+        "ShelfGeneric", 0.1,
+        "ToolStoreBooks", 2,
+        "UniversityLibraryMagazines", 1,
+        "BookstoreBlueCollar", 2,
+        "CarpenterOutfit", 2,
+        "CarpenterTools", 2,
+        "ClassroomMisc", 0.5,
+        "ClassroomShelves", 0.5,
+        "ClassroomSecondaryMisc", 0.5,
+        "ClassroomSecondaryShelves", 0.5,
+        "ConstructionWorkerOutfit", 1.5,
+        "ConstructionWorkerTools", 1.5,
+        "CrateBooks", 3,
+        "CrateBooksSchool", 1,
+        "CrateCarpentry", 0.5,
+        "PostOfficeBooks", 2,
+    },
+    ELECTRONICS_MAGAZINES  = {
+        "ArmyStorageElectronics", 1,
+        "BookstoreBlueCollar", 2,
+        "BookstoreMisc", 2,
+        "CrateMagazines", 1,
+        "ElectronicStoreMagazines", 8,
+        "EngineerTools", 2,
+        "ElectricianOutfit", 2,
+        "ElectricianTools", 2,
+        "LibraryMagazines", 1,
+        "LivingRoomShelf", 0.1,
+        "LivingRoomShelfClassy", 0.1,
+        "LivingRoomShelfRedneck", 0.1,
+        "LivingRoomSideTable", 0.1,
+        "LivingRoomSideTableClassy", 0.1,
+        "LivingRoomSideTableRedneck", 0.1,
+        "LivingRoomWardrobe", 0.1,
+        "MagazineRackMixed", 1,
+        "PostOfficeMagazines", 1,
+        "RecRoomShelf", 0.1,
+        "SafehouseBookShelf", 1,
+        "SafehouseFireplace", 0.1,
+        "SafehouseFireplace_Late", 0.1,
+        "ShelfGeneric", 0.1,
+        "ToolStoreBooks", 2,
+        "UniversityLibraryMagazines", 1,
+    },
+    METALWORKING_MAGAZINES = {
+        "BookstoreMisc", 2,
+        "CrateMagazines", 1,
+        "LibraryMagazines", 1,
+        "LivingRoomShelf", 0.1,
+        "LivingRoomShelfClassy", 0.1,
+        "LivingRoomShelfRedneck", 0.1,
+        "LivingRoomSideTable", 0.1,
+        "LivingRoomSideTableClassy", 0.1,
+        "LivingRoomSideTableRedneck", 0.1,
+        "LivingRoomWardrobe", 0.1,
+        "MagazineRackMixed", 1,
+        "MetalWorkerOutfit", 2,
+        "MetalWorkerTools", 2,
+        "PostOfficeMagazines", 1,
+        "RecRoomShelf", 0.1,
+        "SafehouseBookShelf", 1,
+        "SafehouseFireplace", 0.1,
+        "SafehouseFireplace_Late", 0.1,
+        "ShelfGeneric", 0.1,
+        "ToolStoreBooks", 2,
+        "UniversityLibraryMagazines", 1,
+    },
+    TAILORING_MAGAZINES    = {
+        "BookstoreFashion", 2,
+        "BookstoreMisc", 2,
+        "CrateMagazines", 1,
+        "Hobbies", 10,
+        "Homesteading", 8,
+        "KitchenBook", 0.5,
+        "LibraryMagazines", 1,
+        "LivingRoomShelf", 0.1,
+        "LivingRoomShelfClassy", 0.1,
+        "LivingRoomShelfRedneck", 0.1,
+        "LivingRoomSideTable", 0.1,
+        "LivingRoomSideTableClassy", 0.1,
+        "LivingRoomSideTableRedneck", 0.1,
+        "LivingRoomWardrobe", 0.1,
+        "MagazineRackMixed", 1,
+        "PostOfficeMagazines", 1,
+        "SafehouseBookShelf", 1,
+        "SafehouseFireplace", 0.1,
+        "SafehouseFireplace_Late", 0.1,
+        "ShelfGeneric", 0.1,
+        "SurvivalGear", 1,
+        "UniversityLibraryMagazines", 1,
+    },
+    PLUMBING_MAGAZINES     = {
+        "BookstoreMisc", 2,
+        "CrateMagazines", 1,
+        "EngineerTools", 2,
+        "LibraryMagazines", 1,
+        "LivingRoomShelf", 0.1,
+        "LivingRoomShelfClassy", 0.1,
+        "LivingRoomShelfRedneck", 0.1,
+        "LivingRoomSideTable", 0.1,
+        "LivingRoomSideTableClassy", 0.1,
+        "LivingRoomSideTableRedneck", 0.1,
+        "LivingRoomWardrobe", 0.1,
+        "MagazineRackMixed", 1,
+        "PostOfficeMagazines", 1,
+        "RecRoomShelf", 0.1,
+        "SafehouseBookShelf", 1,
+        "SafehouseFireplace", 0.1,
+        "SafehouseFireplace_Late", 0.1,
+        "SchoolLockersBad", 1,
+        "ShelfGeneric", 0.1,
+        "ToolStoreBooks", 2,
+        "UniversityLibraryMagazines", 1,
+        "PlumbingSupplies", 2,
+        "BathroomCounter", 2,
+    }
+}
 
-            tableInsert(distributionList, item);
-            tableInsert(distributionList, chance);
-        end
+local ITEMS = {
+    GENERAL = {
+        ["Base.RefrigeratorCompressor"] = {
+            "ArmyHangarMechanics", 0.25,
+            "ArmyStorageElectronics", 0.25,
+            "ConstructionWorkerTools", 0.15,
+            "CrateBlacksmithing", 0.25,
+            "CrateElectronics", 0.5,
+            "GarageMetalwork", 1,
+            "CrateMechanics", 0.25,
+            "CrateMetalwork", 0.25,
+            "CrateRandomJunk", 0.0001,
+            "ElectronicStoreMisc", 0.25,
+            "GarageMechanics", 0.25,
+            "GeneratorRoom", 0.25,
+            "MechanicShelfElectric", 0.75,
+            "MechanicSpecial", 0.25,
+            "ToolCabinetMechanics", 0.25,
+            "ToolStoreMetalwork", 0.75,
+            "ToolStoreTools", 0.25,
+            "WeldingWorkshopTools", 0.25,
+            "WireFactoryTools", 0.25,
+        },
+        ["Base.RefrigerantBottle"] = {
+            "ArmyHangarMechanics", 1,
+            "ArmyHangarTools", 1,
+            "ConstructionWorkerTools", 0.5,
+            "CrateMetalwork", 0.5,
+            "GarageMetalwork", 5,
+            "GeneratorRoom", 2,
+            "MetalShopTools", 3,
+            "WireFactoryTools", 2,
+            "EngineerTools", 1,
+            "CrateElectronics", 2,
+            "MetalWorkerTools", 5,
+            "ToolStoreMetalwork", 1,
+            "ArmyStorageElectronics", 0.75,
+            "WeldingWorkshopFuel", 5,
+            "CrateRandomJunk", 0.001,
+            "ElectronicStoreMisc", 0.75,
+            "GarageMechanics", 0.5,
+            "MechanicShelfElectric", 1,
+            "MechanicSpecial", 1,
+            "ToolCabinetMechanics", 1,
+            "ToolStoreTools", 1,
+            "WeldingWorkshopTools", 1,
+        },
+        ["Base.PlasticSheet"] = {
+            "CrateMetalwork", 2,
+            "CrateRandomJunk", 0.5,
+            "GarageMetalwork", 5,
+            "JunkBin", 4,
+            "ToolStoreMetalwork", 4,
+            "CrateSheetMetal", 5,
+            "JunkBin", 2.5,
+            "WeldingWorkshopMetal", 2.5,
+            "WeldingWorkshopTools", 2.5
+        },
+        ["Base.PlasticSheetSmall"] = {
+            "CrateMetalwork", 2,
+            "CrateRandomJunk", 0.5,
+            "GarageMetalwork", 5,
+            "JunkBin", 4,
+            "ToolStoreMetalwork", 4,
+            "CrateSheetMetal", 5,
+            "JunkBin", 2.5,
+            "WeldingWorkshopMetal", 2.5,
+            "WeldingWorkshopTools", 2.5
+        },
+        ["Base.InsulationFoam"] = {
+            "CrateMetalwork", 2,
+            "CrateRandomJunk", 0.5,
+            "GarageMetalwork", 5,
+            "JunkBin", 4,
+            "ToolStoreMetalwork", 4,
+            "CrateSheetMetal", 5,
+            "JunkBin", 2.5,
+            "WeldingWorkshopMetal", 2.5,
+            "WeldingWorkshopTools", 2.5
+        },
+        ["Base.SmallRubberTube"] = {
+            "CrateMetalwork", 2,
+            "CrateRandomJunk", 0.5,
+            "GarageMetalwork", 5,
+            "JunkBin", 4,
+            "ToolStoreMetalwork", 4,
+            "CrateSheetMetal", 5,
+            "JunkBin", 2.5,
+            "WeldingWorkshopMetal", 2.5,
+            "WeldingWorkshopTools", 2.5
+        },
+        ["Base.RubberSeal"] = {
+            "CrateMetalwork", 2,
+            "CrateRandomJunk", 0.5,
+            "GarageMetalwork", 5,
+            "JunkBin", 4,
+            "ToolStoreMetalwork", 4,
+            "CrateSheetMetal", 5,
+            "JunkBin", 2.5,
+            "WeldingWorkshopMetal", 2.5,
+            "WeldingWorkshopTools", 2.5,
+            "ElectronicStoreMisc", 1,
+            "MechanicShelfElectric", 1,
+            "ToolCabinetMechanics", 0.5,
+        },
+        ["Base.ThinCopperPipe"] = {
+            "CabinetFactoryTools", 2,
+            "JunkBin", 2,
+            "CrateMetalwork", 5,
+            "CrateRandomJunk", 0.3,
+            "DerelictHouseCrime", 0.05,
+            "GarageMetalwork", 2.5,
+            "MeleeWeapons", 2.5,
+            "MeleeWeapons_Mid", 2.5,
+            "MeleeWeapons_Late", 2.5,
+            "ToolStoreMetalwork", 5,
+            "WeldingWorkshopMetal", 5,
+            "DrugShackWeapons", 2,
+        },
+        ["Base.AsphaltMixturePowder"] = {
+            "CratePlaster", 25,
+            "CratePlaster", 10,
+            "CratePlaster", 10,
+            "CratePlaster", 5,
+            "CratePlaster", 5,
+            "CrateWallFinish", 4,
+            "CrateWallFinish", 4,
+            "ToolStoreMisc", 5,
+            "ConstructionWorkerTools", 1,
+            "GarageCarpentry", 2,
+            "GarageMechanics", 1,
+            "GarageMetalwork", 0.5,
+            "GarageTools", 0.5,
+            "CrateCarpentry", 1,
+            "CrateMechanics", 0.5,
+            "CrateMetalwork", 0.5,
+            "CratePlaster", 4,
+            "CrateConcrete", 4,
+            "CrateRandomJunk", 0.5,
+            "ToolStoreCarpentry", 1.5,
+            "ToolStoreMetalwork", 1,
+            "ToolStoreTools", 0.5,
+        },
+    },
+    MAGAZINES = {
+        ["Base.FineWoodWorking_Furniture_BedsCouchesArmchairs"] = "CARPENTRY_MAGAZINES",
+        ["Base.FineWoodWorking_Furniture_ChairsBenches"]        = "CARPENTRY_MAGAZINES",
+        ["Base.FineWoodWorking_Furniture_Dressers"]             = "CARPENTRY_MAGAZINES",
+        ["Base.FineWoodWorking_Furniture_Crates"]               = "CARPENTRY_MAGAZINES",
+        ["Base.FineWoodWorking_Furniture_Counters"]             = "CARPENTRY_MAGAZINES",
+        ["Base.FineWoodWorking_Furniture_DesksTables"]          = "CARPENTRY_MAGAZINES",
+        ["Base.FineWoodWorking_DoorsWindows"]                   = "CARPENTRY_MAGAZINES",
+        ["Base.TheFamilyHandyman_StairsFences"]                 = "CARPENTRY_MAGAZINES",
+        ["Base.OldHouseJournal_WoodenFloors"]                   = "CARPENTRY_MAGAZINES",
+        ["Base.FlooringGuide_Ceramic"]                          = "CARPENTRY_MAGAZINES",
+        ["Base.FlooringGuide_Paved"]                            = "CARPENTRY_MAGAZINES",
+        ["Base.PopularMechanics_Lighting"]                      = "ELECTRONICS_MAGAZINES",
+        ["Base.PopularMechanics_HomeAppliances"]                = "ELECTRONICS_MAGAZINES",
+        ["Base.ProjectsInMetal_Diverse"]                        = "METALWORKING_MAGAZINES",
+        ["Base.DecorationsGuide_RoadwayGarage"]                 = "METALWORKING_MAGAZINES",
+        ["Base.HomeMechanix_Bathroom"]                          = "PLUMBING_MAGAZINES",
+        ["Base.ArchitecturalDigest_RugsCarpets"]                = "TAILORING_MAGAZINES",
+    }
+}
+
+for item, distributions in pairs(ITEMS.GENERAL) do
+    for i = 1, #distributions, 2 do
+        local location = distributions[i]
+        local chance = distributions[i + 1]
+        addToDistribution(location, item, chance)
     end
 end
 
-local itemDistributions = {
-    ["Base.RefrigeratorCompressor"] = {
-        "ArmyHangarMechanics", 0.25,
-        "ArmyStorageElectronics", 0.25,
-        "ConstructionWorkerTools", 0.15,
-        "CrateBlacksmithing", 0.25,
-        "CrateElectronics", 0.5,
-        "GarageMetalwork", 1,
-        "CrateMechanics", 0.25,
-        "CrateMetalwork", 0.25,
-        "CrateRandomJunk", 0.0001,
-        "ElectronicStoreMisc", 0.25,
-        "GarageMechanics", 0.25,
-        "GeneratorRoom", 0.25,
-        "MechanicShelfElectric", 0.75,
-        "MechanicSpecial", 0.25,
-        "ToolCabinetMechanics", 0.25,
-        "ToolStoreMetalwork", 0.75,
-        "ToolStoreTools", 0.25,
-        "WeldingWorkshopTools", 0.25,
-        "WireFactoryTools", 0.25,
-    },
-
-    ["Base.RefrigerantBottle"] = {
-        "ArmyHangarMechanics", 1,
-        "ArmyHangarTools", 1,
-        "ConstructionWorkerTools", 0.5,
-        "CrateMetalwork", 0.5,
-        "GarageMetalwork", 5,
-        "GeneratorRoom", 2,
-        "MetalShopTools", 3,
-        "WireFactoryTools", 2,
-        "EngineerTools", 1,
-        "CrateElectronics", 2,
-        "MetalWorkerTools", 5,
-        "ToolStoreMetalwork", 1,
-        "ArmyStorageElectronics", 0.75,
-        "WeldingWorkshopFuel", 5,
-        "CrateRandomJunk", 0.001,
-        "ElectronicStoreMisc", 0.75,
-        "GarageMechanics", 0.5,
-        "MechanicShelfElectric", 1,
-        "MechanicSpecial", 1,
-        "ToolCabinetMechanics", 1,
-        "ToolStoreTools", 1,
-        "WeldingWorkshopTools", 1,
-    },
-
-    ["Base.PlasticSheet"] = {
-        "CrateMetalwork", 2,
-        "CrateRandomJunk", 0.5,
-        "GarageMetalwork", 5,
-        "JunkBin", 4,
-        "ToolStoreMetalwork", 4,
-        "CrateSheetMetal", 5,
-        "JunkBin", 2.5,
-        "WeldingWorkshopMetal", 2.5,
-        "WeldingWorkshopTools", 2.5
-    },
-
-    ["Base.PlasticSheetSmall"] = {
-        "CrateMetalwork", 2,
-        "CrateRandomJunk", 0.5,
-        "GarageMetalwork", 5,
-        "JunkBin", 4,
-        "ToolStoreMetalwork", 4,
-        "CrateSheetMetal", 5,
-        "JunkBin", 2.5,
-        "WeldingWorkshopMetal", 2.5,
-        "WeldingWorkshopTools", 2.5
-    },
-
-    ["Base.InsulationFoam"] = {
-        "CrateMetalwork", 2,
-        "CrateRandomJunk", 0.5,
-        "GarageMetalwork", 5,
-        "JunkBin", 4,
-        "ToolStoreMetalwork", 4,
-        "CrateSheetMetal", 5,
-        "JunkBin", 2.5,
-        "WeldingWorkshopMetal", 2.5,
-        "WeldingWorkshopTools", 2.5
-    },
-
-    ["Base.SmallRubberTube"] = {
-        "CrateMetalwork", 2,
-        "CrateRandomJunk", 0.5,
-        "GarageMetalwork", 5,
-        "JunkBin", 4,
-        "ToolStoreMetalwork", 4,
-        "CrateSheetMetal", 5,
-        "JunkBin", 2.5,
-        "WeldingWorkshopMetal", 2.5,
-        "WeldingWorkshopTools", 2.5
-    },
-
-    ["Base.RubberSeal"] = {
-        "CrateMetalwork", 2,
-        "CrateRandomJunk", 0.5,
-        "GarageMetalwork", 5,
-        "JunkBin", 4,
-        "ToolStoreMetalwork", 4,
-        "CrateSheetMetal", 5,
-        "JunkBin", 2.5,
-        "WeldingWorkshopMetal", 2.5,
-        "WeldingWorkshopTools", 2.5,
-        "ElectronicStoreMisc", 1,
-        "MechanicShelfElectric", 1,
-        "ToolCabinetMechanics", 0.5,
-    },
-
-    ["Base.ThinCopperPipe"] = {
-        "CabinetFactoryTools", 2,
-        "JunkBin", 2,
-        "CrateMetalwork", 5,
-        "CrateRandomJunk", 0.3,
-        "DerelictHouseCrime", 0.05,
-        "GarageMetalwork", 2.5,
-        "MeleeWeapons", 2.5,
-        "MeleeWeapons_Mid", 2.5,
-        "MeleeWeapons_Late", 2.5,
-        "ToolStoreMetalwork", 5,
-        "WeldingWorkshopMetal", 5,
-        "DrugShackWeapons", 2,
-    },
-
-    ["Base.AsphaltMixturePowder"] = {
-        "CratePlaster", 25,
-        "CratePlaster", 10,
-        "CratePlaster", 10,
-        "CratePlaster", 5,
-        "CratePlaster", 5,
-        "CrateWallFinish", 4,
-        "CrateWallFinish", 4,
-        "ToolStoreMisc", 5,
-        "ConstructionWorkerTools", 1,
-        "GarageCarpentry", 2,
-        "GarageMechanics", 1,
-        "GarageMetalwork", 0.5,
-        "GarageTools", 0.5,
-        "CrateCarpentry", 1,
-        "CrateMechanics", 0.5,
-        "CrateMetalwork", 0.5,
-        "CratePlaster", 4,
-        "CrateConcrete", 4,
-        "CrateRandomJunk", 0.5,
-        "ToolStoreCarpentry", 1.5,
-        "ToolStoreMetalwork", 1,
-        "ToolStoreTools", 0.5,
-    },
-};
-
-processAndInsertItems(itemDistributions);
-
-
-local function findItemLocations(itemName)
-    for distributionName, distributionData in pairs(ProceduralDistributions.list) do
-        if distributionData.items then
-            for i = 1, #distributionData.items, 2 do
-                if distributionData.items[i] == itemName then
-                    print(distributionName .. " - Spawn Rate: " .. distributionData.items[i + 1])
-                end
-            end
-        end
+for magazine, distroType in pairs(ITEMS.MAGAZINES) do
+    for i = 1, #DISTRIBUTION_LISTS[distroType], 2 do
+        local location = DISTRIBUTION_LISTS[distroType][i]
+        local chance = DISTRIBUTION_LISTS[distroType][i + 1]
+        addToDistribution(location, magazine, chance)
     end
 end
-print("=====================")
-findItemLocations("PlasterPowder")
-print("=====================")

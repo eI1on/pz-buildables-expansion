@@ -59,7 +59,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = MetalWelding:7,
             xpAward       = MetalWelding:15,
-            category      = Containers - Metal,
+            category      = Containers_Metal,
             tags          = Welding,
             ToolTip       = Tooltip_craft_metalLockerDesc,
             inputs

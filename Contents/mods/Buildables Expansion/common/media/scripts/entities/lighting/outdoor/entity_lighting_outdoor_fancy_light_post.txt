@@ -6,7 +6,7 @@ module Base
 		{
 			LuaWindowClass	= ISEntityWindow,
 			DisplayName	= Fancy Light Post,
-			Icon		= building_menu_lighting_0,
+			Icon		= lighting_outdoor_01_0,
 		}
 	}
 
@@ -21,11 +21,11 @@ module Base
 
         component SpriteConfig
         {
-            face N
+            face E
             {
                 layer
                 {
-                    row = building_menu_lighting_0,
+                    row = lighting_outdoor_01_0,
                 }
             }
         }

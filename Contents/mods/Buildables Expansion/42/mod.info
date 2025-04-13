@@ -1,10 +1,11 @@
-id=Buildables Expansion
-name=Buildables Expansion
-description=
+name=[B42] Buildables Expansion
+id=Buildables_Expansion
 poster=poster.png
+description=
 author=Elyon
 modversion=0.0.1
-tags=Build 42
+require=\ElyonLib
 versionMin=42.0
-tiledef=building_menu 400
-pack=building_menu
+tiledef=buildables_expansion 1512
+pack=buildables_expansion
+tags=Build 42,Balance,Building,Framework,WIP,Interface

@@ -60,7 +60,7 @@ module Base
             timedAction   = BuildWallMetal,
             time          = 350,
             needToBeLearn = true,
-            category      = Doors - Metal,
+            category      = Doors_Metal,
             SkillRequired = MetalWelding:9,
             xpAward       = MetalWelding:15,
             ToolTip       = Tooltip_craft_metalDoorDesc,

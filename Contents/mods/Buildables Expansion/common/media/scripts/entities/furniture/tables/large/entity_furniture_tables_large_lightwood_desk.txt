@@ -21,12 +21,19 @@ module Base
 
         component SpriteConfig
         {
+            face N
+            {
+                layer
+                {
+                    row = furniture_tables_high_01_30 furniture_tables_high_01_31,
+                }
+            }
             face E
             {
                 layer
                 {
-                    row = furniture_tables_high_01_29,
-                    row = furniture_tables_high_01_28,
+                    row = furniture_tables_high_01_25,
+                    row = furniture_tables_high_01_24,
                 }
             }
             face S
@@ -34,6 +41,14 @@ module Base
                 layer
                 {
                     row = furniture_tables_high_01_26 furniture_tables_high_01_27,
+                }
+            }
+            face W
+            {
+                layer
+                {
+                    row = furniture_tables_high_01_29,
+                    row = furniture_tables_high_01_28,
                 }
             }
         }
@@ -46,7 +61,7 @@ module Base
             needToBeLearn = true,
             SkillRequired = Woodwork:5,
             xpAward       = Woodwork:5,
-            category      = Furniture - Tables,
+            category      = Furniture_Tables,
             tags          = Carpentry;Furniture,
             ToolTip       = Tooltip_craft_tableDesc,
             inputs
