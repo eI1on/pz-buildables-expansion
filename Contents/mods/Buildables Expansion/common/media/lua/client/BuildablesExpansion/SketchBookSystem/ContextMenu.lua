@@ -75,8 +75,10 @@ function SketchBookSystem.doContextMenu(playerNum, context, items)
                 writeOption.toolTip = tooltip
             end
 
-            local dbgAddAllSketchesOption = context:addOption("Add All Sketches", actualItems,
-                SketchBookSystem.dbgAddAllSketches, playerObj, item)
+            if isDebugEnabled() then
+                local dbgAddAllSketchesOption = context:addOption("Add All Sketches", actualItems,SketchBookSystem.dbgAddAllSketches, playerObj, item)
+            end
+
             break
         end
     end

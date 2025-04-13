@@ -1,0 +1,6 @@
+13 APR 25
+
+Changelog:
+[list]
+[*] Fixed an issue where the player could not reach the object that needed to be sketched
+[/list]

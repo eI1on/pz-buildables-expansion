@@ -32,20 +32,17 @@ function SketchBookCursor:create(x, y, z, north, sprite)
 end
 
 function SketchBookCursor:walkTo(x, y, z)
+	local square = getCell():getGridSquare(x, y, z)
     local object = self:getObjectList()[self.objectIndex]
-    self.isWallLike = self:isWall(object) or self:isDoorFrame(object)
-    return ISBuildingObject.walkTo(self, x, y, z)
-end
 
-function SketchBookCursor:isWall(object)
-    if object and object:getProperties() then
-        return object:getProperties():Is(IsoFlagType.cutW) or object:getProperties():Is(IsoFlagType.cutN)
-    end
-    return false
-end
+    local props = object:getProperties()
+    self.isWallLike = props:Is("WallN") or props:Is("WallW") or props:Is("WallNTrans") or props:Is("WallWTrans") or props:Is("WindowN") or props:Is("WindowW") or props:Is("DoorWallN") or props:Is("DoorWallW")
 
-function SketchBookCursor:isDoorFrame(object)
-    return object and (object:getType() == IsoObjectType.doorFrW or object:getType() == IsoObjectType.doorFrN)
+	if self.isWallLike then
+		return luautils.walkAdjWall(self.character, square, self.north)
+	else
+		return luautils.walkAdj(self.character, square)
+	end
 end
 
 function SketchBookCursor:rotateKey(key)
@@ -203,7 +200,8 @@ function SketchBookCursor:renderTooltip()
     self.tooltip:setName(name)
 
     self.tooltip.description = " <H2> " .. getText("Tooltip_SketchBook_SketchStatus") .. " </H2><LINE> " .. sketchStatus
-    self.tooltip.footNote =  "'" .. Keyboard.getKeyName(getCore():getKey("Rotate building")) .. "' = " .. getText("IGUI_Cycle1")
+    self.tooltip.footNote = "'" ..
+    Keyboard.getKeyName(getCore():getKey("Rotate building")) .. "' = " .. getText("IGUI_Cycle1")
 end
 
 function SketchBookCursor:onJoypadPressButton(joypadIndex, joypadData, button)
