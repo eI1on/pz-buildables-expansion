@@ -67,13 +67,16 @@ function genericOnAddToMenu(param)
 
     if unlockMode == 1 then
         -- Known via magazine OR sketchbook
-        return (recipeKnown or sketchKnown) and (hasRequiredSkill(player, recipe) or param.shouldShowAll)
+        -- return (recipeKnown or sketchKnown) and (hasRequiredSkill(player, recipe) or param.shouldShowAll)
+        return (recipeKnown or sketchKnown)
     elseif unlockMode == 2 then
         -- Magazine only
-        return recipeKnown and (hasRequiredSkill(player, recipe) or param.shouldShowAll)
+        -- return recipeKnown and (hasRequiredSkill(player, recipe) or param.shouldShowAll)
+        return recipeKnown
     elseif unlockMode == 3 then
         -- Sketchbook only
-        return sketchKnown and (hasRequiredSkill(player, recipe) or param.shouldShowAll)
+        -- return sketchKnown and (hasRequiredSkill(player, recipe) or param.shouldShowAll)
+        return sketchKnown
     end
 
     return hasRequiredSkill(player, recipe)

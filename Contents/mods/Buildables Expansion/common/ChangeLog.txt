@@ -1,0 +1,9 @@
+[ 13/04/25 ]
+- Fixed an issue where the player could not reach the object that needed to be sketched.
+[ ------ ]
+
+[ ALERT_CONFIG ]
+link1 = Elyon's Kofi = https://steamcommunity.com/linkfilter/?u=https://ko-fi.com/ely0n,
+link2 = Workshop = https://steamcommunity.com/profiles/76561199033892043/myworkshopfiles/?appid=108600,
+link3 = Github = https://steamcommunity.com/linkfilter/?u=https://github.com/eI1on,
+[ ------ ]

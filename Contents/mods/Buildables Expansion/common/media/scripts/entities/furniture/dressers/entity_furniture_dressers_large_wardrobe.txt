@@ -51,7 +51,7 @@ module Base
             ToolTip       = Tooltip_craft_dressersDesc,
             inputs
             {
-                item 1 tags[Hammer] mode:keep flags[Prop1],
+                item 1 tags[Hammer] mode:keep flags[Prop1;MayDegradeLight],
                 item 8 [Base.Plank],
                 item 4 [Base.Nails],
             }

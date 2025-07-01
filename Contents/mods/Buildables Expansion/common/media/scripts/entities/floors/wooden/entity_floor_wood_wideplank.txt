@@ -70,7 +70,7 @@ module Base
             ToolTip       = Tooltip_craft_woodFloorDesc,
             inputs
             {
-                item 1 tags[Hammer] mode:keep flags[Prop1],
+                item 1 tags[Hammer] mode:keep flags[Prop1;MayDegradeLight],
                 item 1 [Base.Saw] mode:keep,
                 item 1 [Base.Plank],
                 item 1 [Base.Nails],

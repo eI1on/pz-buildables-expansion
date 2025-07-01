@@ -50,7 +50,7 @@ module Base
             ToolTip       = Tooltip_craft_tableDesc,
             inputs
             {
-                item 1 tags[Hammer] mode:keep flags[Prop1],
+                item 1 tags[Hammer] mode:keep flags[Prop1;MayDegradeLight],
                 item 4 [Base.Plank],
                 item 4 [Base.Nails],
             }

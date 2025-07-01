@@ -49,7 +49,7 @@
             ToolTip       = Tooltip_craft_woodenFenceDesc,
             inputs
             {
-                item 1 tags[Hammer] mode:keep flags[Prop1],
+                item 1 tags[Hammer] mode:keep flags[Prop1;MayDegradeLight],
                 item 2 [Base.Plank],
                 item 2 [Base.Nails],
             }

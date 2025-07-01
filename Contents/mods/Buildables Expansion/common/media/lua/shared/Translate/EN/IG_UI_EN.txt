@@ -31,6 +31,7 @@ IGUI_EN = {
     IGUI_Sketchbook_Category_Decorations_Garage = "Decorations Garage",
     IGUI_Sketchbook_Category_Decorations_Rugs = "Decorations Rugs",
     IGUI_Sketchbook_Category_Decorations_Roadway = "Decorations Roadway",
+    IGUI_Sketchbook_Category_Decorations_Outdoor = "Decorations Outdoor",
     IGUI_Sketchbook_Category_Doors_Garage = "Doors Garage",
     IGUI_Sketchbook_Category_Doors_Metal = "Doors Metal",
     IGUI_Sketchbook_Category_Doors_Wooden = "Doors Wooden",

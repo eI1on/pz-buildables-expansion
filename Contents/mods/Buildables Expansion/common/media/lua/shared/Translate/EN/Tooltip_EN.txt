@@ -39,6 +39,8 @@ Tooltip_EN = {
     Tooltip_craft_bookshelvesDesc = "Shelves to store books... because knowledge<br>is still important - right?",
     Tooltip_craft_garageDecorationsDesc = "Decorative items for garages... for when<br>you're hiding in plain sight",
     Tooltip_craft_roadwayDecorationsDesc = "Decorations for roads and paths...<br>or just more ways to die",
+    Tooltip_craft_outdoorDecorationsDesc = "Decorations for your garden.",
+    
     Tooltip_craft_rugsDesc = "Rugs to add comfort or distract from<br>the stench of the apocalypse",
     Tooltip_craft_bigWroughtFenceDesc = "A big iron fence to keep out the living<br>or the dead - doesn't really matter",
     Tooltip_craft_armchairDesc = "A comfy armchair for when you're<br>too tired to keep running",
