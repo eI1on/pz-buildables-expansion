@@ -65,7 +65,7 @@ module Base
             inputs
             {
                 item 2 [Base.BlowTorch] flags[Prop1],
-                item 1 tags[Hammer] mode:keep flags[Prop1;MayDegradeLight],
+                item 1 tags[Hammer] mode:keep flags[MayDegradeLight],
                 item 1 [Base.Saw] mode:keep,
                 item 7 [Base.Plank] flags[Prop2],
                 item 4 [Base.Nails],

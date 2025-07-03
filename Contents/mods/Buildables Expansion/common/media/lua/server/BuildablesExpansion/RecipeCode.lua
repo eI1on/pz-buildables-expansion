@@ -42,7 +42,8 @@ function BuildablesExpansion.RecipeCode.floorOverlay.OnIsValid(params)
     return true
 end
 
-function BuildablesExpansion.RecipeCode.floorOverlay.OnCreate(thumpable)
+function BuildablesExpansion.RecipeCode.floorOverlay.OnCreate(params)
+    local thumpable = params.thumpable;
     local square = thumpable:getSquare()
     local objects = square:getObjects()
 
@@ -98,8 +99,8 @@ function BuildablesExpansion.RecipeCode.floorOverlay.OnCreate(thumpable)
     floorObject:invalidateRenderChunkLevel(FBORenderChunk.DIRTY_OBJECT_ADD)
 end
 
-function BuildablesExpansion.RecipeCode.doubleWindowGlass.OnCreate(thumpable)
-    local sprite = thumpable:getSprite():getName()
+function BuildablesExpansion.RecipeCode.doubleWindowGlass.OnCreate(params)
+    local thumpable = params.thumpable;
 
     local window = IsoWindow.new(getCell(), thumpable:getSquare(), thumpable:getSprite(), thumpable:getNorth())
     window:setIsLocked(false)
@@ -112,8 +113,8 @@ function BuildablesExpansion.RecipeCode.stairs.OnIsValid(params)
     return true
 end
 
---- @param thumpable IsoThumpable
-function BuildablesExpansion.RecipeCode.garageDoors.OnCreate(thumpable)
+function BuildablesExpansion.RecipeCode.garageDoors.OnCreate(params)
+    local thumpable = params.thumpable;
     local garageDoor = IsoDoor.new(getCell(), thumpable:getSquare(), thumpable:getSprite(), thumpable:getNorth())
 
     garageDoor:setName(thumpable:getName())
@@ -128,8 +129,8 @@ function BuildablesExpansion.RecipeCode.garageDoors.OnCreate(thumpable)
     thumpable:getSquare():transmitRemoveItemFromSquare(thumpable)
 end
 
---- @param thumpable IsoThumpable
-function BuildablesExpansion.RecipeCode.lightSwitch.OnCreate(thumpable)
+function BuildablesExpansion.RecipeCode.lightSwitch.OnCreate(params)
+    local thumpable = params.thumpable;
     local square = thumpable:getSquare()
     local sprite = thumpable:getSprite()
     local tileIsoObjectType = sprite:getType()

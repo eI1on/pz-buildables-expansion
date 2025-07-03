@@ -1,3 +1,9 @@
+[ 03/07/25 ]
+- Deleted the Metal Door entity script and removed all references to 'MetalDoor' from item tweaks, sketch database, and translation files. (this was causing the save not to boot up, because it was added in the build menu in the newest update)
+- Updated recipe code to use parameterized thumpable objects for improved consistency. 
+- Also fixed a minor flag issue in the makeshift target entity script.
+[ ------ ]
+
 [ 13/04/25 ]
 - Fixed an issue where the player could not reach the object that needed to be sketched.
 [ ------ ]

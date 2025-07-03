@@ -2547,10 +2547,6 @@ local Sketches = {
         ["baseSketch"] = "BS_MetalDoor",
     },
 
-
-    ["MetalDoor"]      = {
-        ["baseSketch"] = "BS_SimpleMetalDoor",
-    },
     ["WhiteMetalDoor"] = {
         ["baseSketch"] = "BS_SimpleMetalDoor",
     },

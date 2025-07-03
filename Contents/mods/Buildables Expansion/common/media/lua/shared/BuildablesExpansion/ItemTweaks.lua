@@ -165,7 +165,7 @@ local function tweakItems()
             "CarLiftPillar", "CarLiftUpperMiddlePart", "CarLiftLowerPart", "CarLiftMiddleMiddlePart",
             -- Metal Doors
             "WhiteMetalDoor", "TanMetalDoor", "SpiffosRedMetalDoor", "SecurityDoor", "RedMetalDoor",
-            "PizzaWhirledGreenMetalDoor", "PileOCrepeOrangeMetalDoor", "MetalDoor", "BlueMetalDoor", "BlackMetalDoor",
+            "PizzaWhirledGreenMetalDoor", "PileOCrepeOrangeMetalDoor", "BlueMetalDoor", "BlackMetalDoor",
             "DoubleMetalGreyRightDoor", "DoubleMetalGreyLeftDoor",
             -- Metal Doors with Windows
             "DoubleMetalOrangeKitchenGlassRightDoor", "DoubleMetalOrangeKitchenGlassLeftDoor",
